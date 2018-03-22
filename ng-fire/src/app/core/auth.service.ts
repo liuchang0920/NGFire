@@ -111,7 +111,8 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
-    return this.authenticated !== null
+    return this.authState !== null 
+    // look out for variable name, could mess up
   }
 
   get currentUserId(): string {
