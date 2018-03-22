@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './/routing.module';
 import { environment } from '../environments/environment';
+import { PostModule } from './post/post.module';
 
 
 @NgModule({
@@ -17,12 +18,14 @@ import { environment } from '../environments/environment';
     AppComponent
   ],
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     CoreModule,
     SharedModule,
     RoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    PostModule
   ],
   providers: [],
   bootstrap: [AppComponent]
