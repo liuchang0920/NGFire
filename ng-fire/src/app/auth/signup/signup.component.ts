@@ -13,7 +13,7 @@ import { AuthService } from '../../core/auth.service';
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
-  hide: true;
+  hide: boolean = true;
 
   constructor(public fb: FormBuilder,
     private auth: AuthService,

@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './/routing.module';
 import { environment } from '../environments/environment';
 import { PostModule } from './post/post.module';
+import { GalleryModule } from './gallery/gallery.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PostModule } from './post/post.module';
     SharedModule,
     RoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    PostModule
+    PostModule,
+    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

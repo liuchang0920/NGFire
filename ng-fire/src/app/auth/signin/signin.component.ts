@@ -14,10 +14,10 @@ import { AuthService } from '../../core/auth.service';
 })
 export class SigninComponent implements OnInit {
   signInForm: FormGroup;
-  hide: true;
+  hide: boolean = true;
   
   constructor(public fb: FormBuilder, 
-              private auth: AuthService,
+              public auth: AuthService,
               private router: Router) { 
                 this.signInForm = this.fb.group({
                   email: ['', [Validators.email, Validators.required]],

@@ -17,6 +17,10 @@ export class UserDashboardComponent implements OnInit {
   user: User;
   task: AngularFireUploadTask;
 
+  path: string
+  meta: object
+  uploadType: boolean
+
   constructor(private auth: AuthService,
               private userService: UserService,
               private storage: AngularFireStorage,
@@ -24,6 +28,7 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getUser();
+    this.setUploadData();
   }
 
   getUser() {
@@ -68,5 +73,18 @@ export class UserDashboardComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  setUploadData() {
+    return this.auth.user.subscribe(user => {
+      this.path = `users/${user.uid}/gallery`
+      this.meta = {
+        uploader: user.uid,
+        website: 'www.google.com',
+      }
+      // true means collections upload
+      // flase means document field upload
+      this.uploadType = true
+    })
   }
 }
