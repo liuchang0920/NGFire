@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
+import { GalleryListComponent } from './/gallery/gallery-list/gallery-list.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/gallery', pathMatch: 'full'
+    path: '', redirectTo: '/chat', pathMatch: 'full'
   }, 
-  // { path: '', component: GalleryListComponent },
+  { path: '', component: GalleryListComponent },
   {
+    path: '', loadChildren: './chat/chat.module#ChatModule'
+  },
+   {
     path: '', loadChildren: './gallery/gallery.module#GalleryModule'
   }, 
   {

@@ -32,7 +32,11 @@ export class UserDashboardComponent implements OnInit {
   }
 
   getUser() {
-    this.auth.user.subscribe(user => (this.user = user));
+    this.auth.user.subscribe(user => {
+      this.user = user;
+      console.log("find user：", user);
+      return null;
+    });
   }
 
   updateProfile() {

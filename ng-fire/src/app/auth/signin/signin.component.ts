@@ -53,3 +53,6 @@ export class SigninComponent implements OnInit {
   }
 
 }
+
+
+// signin method for given email is unique, probably need more configuration

@@ -11,8 +11,10 @@ import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './/routing.module';
 import { environment } from '../environments/environment';
 import { PostModule } from './post/post.module';
-import { GalleryModule } from './gallery/gallery.module';
-
+import { GalleryModule } from './/gallery/gallery.module';
+import { ChatModule } from './chat/chat.module';
+// import auth？
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { GalleryModule } from './gallery/gallery.module';
     RoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     PostModule,
-    GalleryModule
+    GalleryModule,
+    ChatModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

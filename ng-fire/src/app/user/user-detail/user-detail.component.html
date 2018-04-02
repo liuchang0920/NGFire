@@ -11,5 +11,10 @@
         <mat-card-content>
             <p> {{ user.uid }}</p>
         </mat-card-content>
+        <mat-card-footer align="end">
+            <button mat-mini-fab (click)="chat()" >
+                <mat-icon class="mat-18">chat</mat-icon>
+            </button>
+        </mat-card-footer>
     </mat-card>
 </div>
