@@ -13,7 +13,8 @@ import { environment } from '../environments/environment';
 import { PostModule } from './post/post.module';
 import { GalleryModule } from './/gallery/gallery.module';
 import { ChatModule } from './chat/chat.module';
-
+// import auth？
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ChatModule } from './chat/chat.module';
     AngularFireModule.initializeApp(environment.firebase),
     PostModule,
     GalleryModule,
-    ChatModule
+    ChatModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

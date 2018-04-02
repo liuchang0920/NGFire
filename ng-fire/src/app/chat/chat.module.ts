@@ -9,26 +9,25 @@ import { ChatInputComponent } from './chat-input/chat-input.component';
 import { ChatFeedComponent } from './chat-feed/chat-feed.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
-import { ChatTreadComponent } from './chat-tread/chat-tread.component';
-import { ChatTreadsComponent } from './chat-treads/chat-treads.component';
+import { ChatThreadComponent } from './chat-thread/chat-thread.component';
+import { ChatThreadsComponent } from './chat-threads/chat-threads.component';
 
 import { ThreadService } from './thread.service';
 import { MessageService } from './message.service';
-import { MessageComponent } from './message/message.component';
 
 
 const routes: Routes = [
-  { path: 'chat/detail', component: ChatDetailComponent },
-  { path: 'chat', component: ChatDetailComponent }
+  { path: 'chat/:id', component: ChatDetailComponent },
+  { path: 'chat', component: ChatListComponent }
 ]
 @NgModule({
   imports: [
     SharedModule, RouterModule.forChild(routes)
   ],
   exports: [
-    ChatInputComponent, ChatFeedComponent, ChatMessagesComponent, ChatTreadsComponent // why export these components
+    ChatInputComponent, ChatFeedComponent, ChatMessagesComponent, ChatThreadsComponent // why export these components
   ],
-  declarations: [ChatListComponent, ChatDetailComponent, ChatInputComponent, ChatFeedComponent, ChatMessageComponent, ChatMessagesComponent, ChatTreadComponent, ChatTreadsComponent, MessageComponent],
+  declarations: [ChatListComponent, ChatDetailComponent, ChatInputComponent, ChatFeedComponent, ChatMessageComponent, ChatMessagesComponent, ChatThreadComponent, ChatThreadsComponent],
   providers: [ThreadService, MessageService]
 })
 export class ChatModule { }

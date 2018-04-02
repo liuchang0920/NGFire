@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '', redirectTo: '/chat', pathMatch: 'full'
   }, 
-  // { path: '', component: GalleryListComponent },
+  { path: '', component: GalleryListComponent },
   {
     path: '', loadChildren: './chat/chat.module#ChatModule'
   },

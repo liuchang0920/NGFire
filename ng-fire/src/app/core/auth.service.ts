@@ -91,8 +91,9 @@ export class AuthService {
   }
 
   private socialLogin(provider) {
-    return this.afAuth.auth.signInWithRedirect(provider)
+    return this.afAuth.auth.signInWithPopup(provider)
       .then(credential => {
+        console.log("google login...");
         return this.updateUserData(credential.user)
       })
       .catch(error => console.log(error));
@@ -105,6 +106,8 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL || "http://www.gravatar.com/avatar/" + Md5.hashStr(user.uid) + "?d=identicon"
     }
+    console.log("update user info: ", user);
+
     return userRef.set((data), {
       merge: true
     })
