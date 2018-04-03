@@ -1,7 +1,7 @@
-mat-toolbar {
+/* mat-toolbar {
     background-color: var(--app-primary-color);
     color: white;
-}
+} */
 
 mat-form-field {
     width: 100%;
@@ -43,11 +43,18 @@ mat-form-field {
 	z-index: -1;
 }
 .hero {
-  background-color: var(--app-primary-color);
-  color: white;
+  /* background-color: var(--app-primary-color); */
+  /* color: white; */
   min-height: 200px;
   padding-top: 15px;
 }
 .hero-text {
   margin-left: 15px;
+}
+
+
+mat-card {
+  margin: 10px;
+  max-width: 600px;
+  margin: 16px auto;
 }

@@ -29,6 +29,7 @@ export class ChatDetailComponent implements OnInit {
       thread.map(data => this.threadId = data.id) // ???? 
     })
   }
+  
   delete() {
     this.threadService.deleteThread(this.threadId);
   }

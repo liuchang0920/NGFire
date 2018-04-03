@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Thread } from '../thread.model';
+import { ThreadService } from '../thread.service';
 
 @Component({
   selector: 'app-chat-thread',
@@ -12,9 +13,13 @@ export class ChatThreadComponent implements OnInit {
 
   @Input() thread: Thread;
 
-  constructor() { }
+  constructor(private threadService: ThreadService) { }
 
   ngOnInit() {
+  }
+
+  delete(threadId) {
+    this.threadService.deleteThread(threadId);
   }
 
 }

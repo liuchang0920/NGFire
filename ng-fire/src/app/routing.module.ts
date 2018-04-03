@@ -4,9 +4,8 @@ import { GalleryListComponent } from './/gallery/gallery-list/gallery-list.compo
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/chat', pathMatch: 'full'
+    path: '', redirectTo: '/users', pathMatch: 'full'
   }, 
-  { path: '', component: GalleryListComponent },
   {
     path: '', loadChildren: './chat/chat.module#ChatModule'
   },

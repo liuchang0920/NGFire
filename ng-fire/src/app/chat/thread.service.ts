@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
-import { Thread } from './thread.model';
-import { Message } from './message.model';
+import { Thread } from './/thread.model';
+import { Message } from './/message.model';
 
 import { AuthService } from '../core/auth.service';
-import { MessageService } from './message.service';
+import { MessageService } from './/message.service';
 
 @Injectable()
 export class ThreadService {
@@ -19,7 +20,8 @@ export class ThreadService {
   constructor(
     private afs: AngularFirestore,
     private auth: AuthService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) { }
 
   getThreads() {
@@ -49,7 +51,10 @@ export class ThreadService {
 
     const threadPath = `chats/${id}`;
 
-    return this.afs.doc(threadPath).set(thread, {merge: true});
+    return this.afs
+    .doc(threadPath)
+    .set(thread, {merge: true})
+    .then(()=> this.router.navigate([`chat/${id}`]));
   }
 
   async deleteThread(threadId: string) {

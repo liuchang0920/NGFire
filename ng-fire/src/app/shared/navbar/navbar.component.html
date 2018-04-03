@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row color="primary">
+            <span class="appTitle" routerLink="/">
+              {{ appTitle }}
+            </span>
+            <span class="spacer"></span>
+            <button mat-button routerLink="/blog">Blog</button>
+            <button mat-button routerLink="/signin" *ngIf="!auth.authenticated">Signin</button>
+            <button mat-button routerLink="/signup" *ngIf="!auth.authenticated">Signup</button>
+            <button mat-button routerLink="/gallery" *ngIf="auth.authenticated">
+              <mat-icon class="mat-18">photo</mat-icon>
+            </button>
+            <button mat-button routerLink="/chat" *ngIf="auth.authenticated">
+              <mat-icon class="mat-18">chat</mat-icon>
+            </button> 
+            <button mat-icon-button [matMenuTriggerFor]="menu"  *ngIf="auth.authenticated">
+              <mat-icon class="mat-18">more_vert</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                    <mat-icon class="mat-18"></mat-icon>
+                    <span routerLink="/me">Profile</span>
+                </button>
+                <button mat-menu-item (click)="auth.signOut()">
+                  <mat-icon class="mat-18"></mat-icon>
+                  <span>Sign Out</span>
+              </button>
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</mat-toolbar>

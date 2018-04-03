@@ -11,9 +11,12 @@ import { UserListItemComponent } from './user-list-item/user-list-item.component
 
 import { PostModule } from '../post/post.module';
 
+// guard 
+import { RoutingGuard } from '../routing.guard';
+
 const routes: Routes = [
   {
-    path: 'me', component: UserDashboardComponent, data: {title: "my profile"}
+    path: 'me', component: UserDashboardComponent, data: {title: "Dashboard"}, canActivate: [RoutingGuard]
   }, {
     path: 'users', component: UserListComponent, data: {title: "users"}
   }, {
